@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>event</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>失去焦点事件 onblur</h4>
+    <input type="text" id="input1" name="" value="">
+    <h4>获得焦点事件 onfocus</h4>
+    <input type="text" id="input2" name="" value="">
+    <h4>用户改变域的内容 onchange</h4>
+    <input type="text" id="input2" name="" value="">
+    <select id="sec">
+        <option value="第一">第一</option>
+        <option value="第二">第二</option>
+        <option value="第三">第三</option>
+    </select>
+    <textarea rows="" cols="" id="tex"></textarea>
+    <h4>鼠标移入事件、鼠标按下事件、鼠标松开事件、鼠标移动事件和鼠标移开事件</h4>
+    <div id="div1"></div>
+    <h4>鼠标单击事件</h4>
+    <div id="div2"></div>
+    <h4>鼠标双击事件</h4>
+    <div id="div3"></div>
+    <h4>键盘按键事件和按键松开事件</h4>
+    <input type="text" id="input4" name="" value="">
+    <h4>文本被选中事件</h4>
+    <input type="text" id="input5" name="" value="文本">
+</body>
+
+</html>
+<script>
+    document.getElementById("input1").onblur = function() {
+        console.log("元素失去焦点");
+    }
+    document.getElementById("input2").onfocus = function() {
+        console.log("元素获得焦点");
+    }
+    document.getElementById("input2").onchange = function() {
+        console.log("用户改变域的内容");
+    }
+    document.getElementById("sec").onchange = function() {
+        console.log("用户改变下拉菜单选项");
+    }
+    document.getElementById("tex").onchange = function() {
+        console.log("文本框内容改变");
+    }
+    document.getElementById("div1").onmousemove = function() {
+        console.log("鼠标移动事件");
+    }
+    document.getElementById("div1").onmouseout = function() {
+        console.log("鼠标移开事件");
+    }
+    document.getElementById("div1").onmouseover = function() {
+        console.log("鼠标移入事件");
+    }
+    document.getElementById("div1").onmousedown = function() {
+        console.log("鼠标按下事件");
+    }
+    document.getElementById("div1").onmouseup = function() {
+        console.log("鼠标松开事件");
+    }
+    document.getElementById("div2").onclick = function() {
+        console.log("鼠标点击事件");
+    }
+    document.getElementById("div3").ondblclick = function() {
+        console.log("鼠标双击事件");
+    }
+    document.getElementById("input4").onkeydown = function() {
+        console.log("键盘按键事件");
+    }
+    document.getElementById("input4").onkeyup = function() {
+        console.log("按键松开事件");
+    }
+    document.getElementById("input5").onselect = function() {
+        console.log("文本被选中");
+    }
+    
+    
+
+</script>

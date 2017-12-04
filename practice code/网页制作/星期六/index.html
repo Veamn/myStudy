@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<aside>
+	 	<div class="lawyerCenter">
+	 		<img src="img/user.png" alt="user" class="user">
+			<p>王者雄姿</p>
+			<p>个人中心</p>
+	 	</div>
+	 	<div class="feature"> 
+	 		<ul>
+				<li><div><span></span>咨询</div></li>
+				<li><div><span></span>文章管理</div></li>
+				<li><div><span></span>订单管理</div></li>
+				<li>
+					<div><span></span>账单管理</div>
+					<ul class="childnav">
+						<li>订单1</li>
+						<li>订单2</li>
+						<li>订单3</li>
+					</ul>
+				</li>
+				<li>
+					<div><span></span>工具</div>
+					<ul class="childnav">
+						<li>工具1</li>
+						<li>工具2</li>
+						<li>工具3</li>
+					</ul>
+				</li>
+				<li><div><span></span>设置</div></li>
+	 		</ul>
+		</div>
+		<div class="out">
+			<span></span>
+			<span>退出</span>
+		</div>
+	</aside>
+	<article>
+	 	<div class="back">
+	 		<button>返回首页</button>
+	 	</div>
+	 	<div class="chat">
+			<div class="chat-left">
+				<input type="text" class="input" name="" value="" placeholder="search...">
+				<ul id="peopleList">
+					<!-- <li>
+						<img src="./img/user.png" class="chatimg" alt="">
+						<span class="name">吴先生</span>
+						<span>待会给你发红包</span>
+						<span>14:30pm</span>
+					</li>
+					<li>
+						<img src="./img/user.png" class="chatimg" alt="">
+						<span class="name">林先生</span>
+						<span>待会给你发红包</span>
+						<span>14:30pm</span>
+					</li>
+					<li>
+						<img src="./img/user.png" class="chatimg" alt="">
+						<span class="name">吴先生</span>
+						<span>待会给你发红包</span>
+						<span>14:30pm</span>
+					</li>
+					<li>
+						<img src="./img/user.png" class="chatimg" alt="">
+						<span class="name">吴先生</span>
+						<span>待会给你发红包</span>
+						<span>14:30pm</span>
+					</li>
+					<li>
+						<img src="./img/user.png" class="chatimg" alt="">
+						<span class="name">张先生</span>
+						<span>待会给你发红包</span>
+						<span>14:30pm</span>
+					</li>
+					<li>
+						<img src="./img/user.png" class="chatimg" alt="">
+						<span class="name">吴先生</span>
+						<span>待会给你发红包</span>
+						<span>14:30pm</span>
+					</li>
+					<li>
+						<img src="./img/user.png" class="chatimg" alt="">
+						<span class="name">吴先生</span>
+						<span>待会给你发红包</span>
+						<span>14:30pm</span>
+					</li>
+					<li>
+						<img src="./img/user.png" class="chatimg" alt="">
+						<span class="name">张先生</span>
+						<span>待会给你发红包</span>
+						<span>14:30pm</span>
+					</li> -->
+				</ul>
+			</div>
+			<div class="chat-right">
+				<div class="chat-right-top">
+					<span class="peopleName">张三</span>
+					<button>下线</button>
+				</div>
+				<div class="chat-content">
+					<ul class="ulRight">
+						<li class="other"><img src="./img/user.png" alt=""><p>今天天气有点冷</p></li>
+						<li class="mysend"><img src="./img/user.png" alt=""><p>天气有点冷</p></li>
+						<li class="mysend"><img src="./img/user.png" alt=""><p>肚子有点饿</p></li>
+						<li class="mysend"><img src="./img/user.png" alt=""><p>今天天气有点冷</p></li>
+					</ul>
+				</div>
+				<div class="chat-input">
+					<div>
+						<span><input type="file" name="" value=""></span>
+						<span class="photo"><input type="file" name="" value=""></span>
+						<span></span>
+					</div>
+					<div class="textarea" contenteditable="true"></div>
+					<button class="send">发送</button>
+				</div>
+			</div>
+		</div>
+	</article>
+</body>
+</html>
+
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+	//左边导航栏
+	$(".feature>ul>li").click(function(){
+		$(this).find(".childnav").stop().slideToggle(500);
+		$(this).siblings().find(".childnav").hide();
+	});
+
+	//输入框匹配联系人
+	$(".input").keyup(function(){
+		searchFn($(this).val());
+	});
+
+	
+	//点击联系人获取具体联系人------委托父级做
+	$("#peopleList").on('click','li',function(){
+		// //获取li对象里面的userId；
+		var userId = $(this).data().userid;
+		//改变选中的列的背景颜色--index()获取在同级目录下自己对应的下标
+		choicePeople($("#peopleList"),$(this).index());
+		// $(this).addClass("addlibg").siblings().removeClass("addlibg");
+		$(".peopleName").text($(this).find(".name").text());
+	});
+
+	//点击按钮进行发送
+		$(".send").click(function () {
+			send();
+		});
+
+	//点击图片添加按钮添加图片
+	// $(".photo").change(function(){
+	// 	$()
+	// });
+
+	////////////////////////////////下面是函数定义///////////////////////////////
+	//定义搜索函数
+	function searchFn(name){
+		var name = $.trim(name);
+		//删除搜索时
+		if(name == "" && name.length == 0){
+			$(".name").parent().show();
+		}
+		//按空格时
+		if(typeof name == "undefined" || name == ""){
+			return false;
+		}
+		//过滤
+		$(".name").filter(function(index){
+			if($(this).text().indexOf(name) >= 0){
+				$(this).parent().show();
+			} else{
+				$(this).parent().hide();
+			}
+		});
+	}
+
+	//动态添加数据函数
+	function requestList() {
+		$.ajax({
+			url: "./json/json.json",
+			dataType: "json",
+			async: false,
+			data: null,
+			type: "GET",
+			success:function(req){
+				var html = "";
+				for(var i=0; i<req.data.length; i++){
+					if(req.data[i].time.substring(0,req.data[i].time.indexOf(":"))>= 12){
+						 html += "<li><img src='" + req.data[i].headerimg + "' class='chatimg' alt=''><span class='name'>" + req.data[i].name + "</span><span>" + req.data[i].lastspeak + "</span><span>" + req.data[i].time + "pm</span></li>";
+					}else{
+						html += "<li><img src='" + req.data[i].headerimg + "' class='chatimg' alt=''><span class='name'>" + req.data[i].name + "</span><span>" + req.data[i].lastspeak + "</span><span>" + req.data[i].time + "am</span></li>";
+					}
+				}
+				$("#peopleList").html(html);
+			},
+			error:function(e){
+				console.log("出错了");
+			}
+		});
+	}
+	requestList();
+
+	//聊天列表点击选择具体对象的函数
+	function choicePeople(ulList,choice){
+		//获取第一个li
+		if(choice == undefined){
+			choice = 0;
+		}
+		ulList.children().eq(choice).addClass("addlibg").siblings().removeClass("addlibg");		
+	}
+	//默认选中第一个联系人
+	$("#peopleList").children().eq(0).addClass("addlibg");
+	
+
+	//定义发送消息函数
+	function send(){
+		var content = $(".ulRight").html();
+		var text = $(".textarea").text();
+		if($.trim(text) != ""){
+			content += "<li class='mysend'><img class='tx' src='./img/user.png' /><p>" + text + "</p></li>";
+			$(".ulRight").html(content);
+			$(".textarea").text("");
+			$(".chat-content").scrollTop(99999);
+		}else{
+
+		}
+	}
+	//选择图片进行发送
+	$(".photo").change(function(){
+		$
+	})
+
+	//去除多余标签函数
+	var str1 = "";
+	function removeDom(s){
+		if(s.indexOf("</div>") < 0 && s.indexOf("</div>") < 0 && s.indexOf("</br>") < 0){
+			str = s;
+		}else{
+			s = s.replace("<div>","").replace("</div>","").replace("<br/>","");
+			removeDom(s);
+		}
+	}
+
+</script>

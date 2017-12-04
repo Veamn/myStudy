@@ -1,0 +1,228 @@
+html,body{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%; 
+}
+ul,li{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+li{
+  float: left;
+}
+body{
+  background-color: #f7f8f8;
+}
+header{
+  height: 80px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+.logo img{
+  /* margin-left: 70%;; */
+}
+nav{
+  display: flex;
+  justify-items: center;
+  margin-right: 20%;
+  /* border: 1px solid red; */
+  height: 100%;
+}
+nav ul{
+  margin: 0 30px;
+  /* height: 100%; */
+}
+nav ul li{
+  margin: 30px 30px;
+  height: 46px;
+  width: 65px;
+  cursor: pointer;
+  text-align: center;
+}
+.navActive{
+  border-bottom: 4px solid #0092ff;
+  color: #0092ff;
+}
+nav ul li:hover{
+  border-bottom: 4px solid #0092ff;
+  color: #0092ff;
+}
+nav input{
+  height: 40px;
+  width: 280px;
+  margin-top: 18px;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+  outline: none;
+  border: none;
+  color: #777;
+  font-size: 14px;
+  text-indent: 1em;
+}
+
+.btn button{
+  width: 88px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn button:hover{
+  background-color: #0092ff;
+  color: #fff;  
+}
+article{
+  width: 70%;
+  height: auto;
+  /* border: 1px solid rgb(201, 98, 98); */
+  margin: 30px auto;
+  display: flex;
+}
+.userList{
+  width: 640px;
+  height: auto;
+  position: relative;
+  color: #777;
+  font-size: 14px;
+  display: flex;
+}
+.userList ul {
+  display: flex;
+  flex-direction: column;
+}
+.userList ul li{
+  display: flex;
+  /* border: 1px solid red; */
+  margin-bottom: 12px;
+  background-color: #fff;
+  
+}  
+.userListLeft{
+  /* width: 65px; */
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.userList img{
+  width: 60px;
+  height: 60px;
+}
+.userListLeft span{
+  margin: 50px auto;
+  background-color: #eee;
+  padding: 2px 15px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.userListLeft span:hover{
+  color: #fff;
+  background-color: #0092ff;
+}
+.userListLeft span i{
+  font-style: normal;  
+}
+.userListRight{
+  display: flex;
+  flex-direction: column;
+}
+.answerTime{
+  margin: 20px 10px;
+  cursor: pointer;
+}
+.label{
+  margin: 0px 10px; 
+}
+.labelType{
+  border: 1px solid #ddd;
+  padding: 3px 15px;
+  border-radius: 5px;
+  cursor: pointer;  
+}
+.summary{
+  margin: 15px 10px;
+  color: #000;
+  cursor: pointer;  
+}
+.lawyerAnswer{
+  height: 95px;
+  background-color: #f5f5f5;
+  margin: 5px 10px;
+}
+.lawyerName,.editorTime{
+  display: inline-block;
+  margin: 5px 10px;
+}
+.lawyerAnswer p{
+  margin: -2px 10px;
+  color: #444;
+}
+.attention{
+  border-top: 1px solid #eee;
+  width: 530px;
+  margin: 10px;
+  padding: 10px 0;
+}
+.attention span{
+  margin: 0 10px;
+  cursor: pointer;
+}
+.attention span:hover{
+  color: #0092ff;
+}
+
+
+
+.myList{
+  min-width: 310px;
+  width: 310px;
+  height: 135px;
+  background-color: #fff;
+  margin-left: 20px;
+  
+}
+.myList ul{
+  display: flex;
+  flex-direction: column;
+}
+.myList ul li{
+  margin: 10px 30px;
+  cursor: pointer;
+}
+.myList ul li:hover{
+  color: #0092ff;
+}
+
+
+footer{
+  width: 100%;
+  height: 310px;
+  background-color: #1f232a;
+	position: relative;
+}
+
+.code{
+	margin-left: 20%;
+	margin-top: 53px;
+	color: #666;
+	float: left;
+}
+.about{
+	/* width: 37.6%;	 */
+	width: 47%;
+	height: 137px;
+	font-size: 14px;
+	float: left;
+	margin-top: 40px;
+	margin-left: 58px;
+	color: #666;
+}

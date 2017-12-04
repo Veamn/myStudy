@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Docu</title>
+    <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #content {
+            width: 400px;
+            height: auto;
+            border: solid 1px red;
+            margin-left: 100px;
+        }
+        
+        #bz {
+            width: 50px;
+            height: 50px;
+            margin-left: 120px;
+            background-color: blue;
+        }
+        
+        #bz1 {
+            width: 100%;
+            height: 50px;
+            border: solid 1px black;
+        }
+        
+        #bz2 {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <div id="bz"></div>
+        <div id="bz1">
+            <div id="bz2"></div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var bz = document.getElementById("bz");
+    var bz1 = document.getElementById("bz1");
+    var bz2 = document.getElementById("bz2");
+    var x = bz.offsetLeft;
+    var flag = false;
+    bz2.onmousedown = function() {
+        self = this;
+        flag = true;
+    }
+    document.onmousemove = function(e) {
+        if (flag) {
+            self.style.marginLeft = (e.pageX - 101) + "px";
+            if (event.pageX == x) {
+                console.log("重合");
+            } else if (event.pageX > 450) {
+                console.log("超出范围");
+            }
+        }
+    }
+
+    document.onmouseup = function() {
+        flag = false;
+    }
+    
+    // var arr = [1, 2, 1, 4, 5, 6, 1, 10, 2, 3, 77, 22];
+    // var p = 2;
+    // for (var i = 0; i < arr.length; i++) {
+    //     for (var j = 1; j < arr.length; j++) {
+    //         if (arr[i] > arr[j]) {
+    //             p = arr[i];
+    //             arr[i] = arr[j];
+    //             arr[j] = p;
+    //         }
+    //     }
+    // }
+    
+   
+</script>

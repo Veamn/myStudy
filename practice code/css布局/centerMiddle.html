@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .p{
+      width: 600px;
+      height: 200px;
+      border: solid 5px #666;
+      margin: 2px;
+    }
+    .c{
+      width: 200px;
+      height: 100px;
+      border: solid 5px #d82;
+    }
+    .parent-1{
+      display: flex;
+      justify-content: center;
+    }
+    .parent-2{
+      position: relative;
+    }
+    .child-2{
+      position: absolute;
+      left: 50%;
+      margin-left: -100px;  
+    }
+    .parent-3{
+      text-align: center;
+    }
+    .child-3{
+      display: inline-block;
+    }
+    .child-4{
+      margin: 0 auto;
+    }
+    .parent-5{
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .parent-6{
+      position: relative;
+    }
+    .child-6{
+      position: absolute;
+      top: 50%;
+      margin-top: -50px;
+    }
+    .parent-7{
+      display: flex;
+      align-items: center;
+    }
+    .parent-8{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .parent-9{
+      position: relative;
+    }
+    .child-9{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -50px;
+      margin-left: -100px;
+    }
+    .parent-10{
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+    .child-10{
+      /* margin: 0 auto; */
+      text-align: center;
+      display: inline-block;
+    }
+    
+  </style>
+</head>
+<body>
+  <h2>水平居中</h2>
+  <div class="parent-1 p">
+    <div class="child-1 c">第一种</div>
+  </div>
+  <div class="parent-2 p">
+    <div class="child-2 c">第二种</div>
+  </div>
+  <div class="parent-3 p">
+    <div class="child-3 c">第三种</div>
+  </div>
+  <div class="parent-4 p">
+    <div class="child-4 c">第四种</div>
+  </div>
+  <h2>垂直居中</h2>
+  <div class="parent-5 p">
+      <div class="child-5 c">第一种</div>
+    </div>
+    <div class="parent-6 p">
+      <div class="child-6 c">第二种</div>
+    </div>
+    <div class="parent-7 p">
+      <div class="child-7 c">第三种</div>
+    </div>
+    <h2>水平垂直居中</h2>
+    <div class="parent-8 p">
+      <div class="child-8 c">第一种</div>
+    </div>
+    <div class="parent-9 p">
+      <div class="child-9 c">第二种</div>
+    </div>
+    <div class="parent-10 p">
+      <div class="child-10 c">第三种</div>
+    </div>
+</body>
+</html>

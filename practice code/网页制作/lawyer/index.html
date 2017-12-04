@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>lawyer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="./img/logo.png" alt=""> 
+    </div>
+    <nav>
+      <ul>
+        <li class="navActive">问答社区</li>
+        <li>分类</li>
+      </ul>
+      <input class="input" type="text" placeholder="搜索你感兴趣的内容">
+    </nav>
+    <div class="btn">
+      <button>登录</button>
+      <button>注册</button>
+    </div>
+  </header>
+  <article>
+    <div class="userList">
+      <ul>
+        <li>
+          <div class="userListLeft">
+            <img src="./img/user.png" alt="">
+            <span>赞<i>2</i></span>
+          </div>
+          <div class="userListRight">
+              <span class="answerTime">陈律师62天前回答了这个问题</span>
+              <span class="label">标签：
+                <span class="labelType">合同纠纷</span>
+              </span>
+              <p class="summary">我在工厂打工，然后被人打了，怎么办？</p>  
+              <div class="lawyerAnswer">
+                <span class="lawyerName">陈律师</span>
+                <span class="editorTime">编辑于2017-09-22 10:26:55</span>
+                <p>您好，在工作中与同事发生肢体冲突在企业管理中是属于比较严重的事情了。您说最近工作压力非常大，估计最近工作态度上也有表现出问题并且影响到了工作质量。再加上这次事件才让单位想开除您。</p>
+              </div>
+              <div class="attention">
+                <span>关注</span>
+                <span>分享</span>
+                <span>收藏</span>
+              </div>
+          </div>
+        </li>
+        <li>
+          <div class="userListLeft">
+            <img src="./img/user.png" alt="">
+            <span>赞<i>2</i></span>
+          </div>
+          <div class="userListRight">
+              <span class="answerTime">陈律师62天前回答了这个问题</span>
+              <span class="label">标签：
+                <span class="labelType">合同纠纷</span>
+              </span>
+              <p class="summary">我在工厂打工，然后被人打了，怎么办？</p>  
+              <div class="lawyerAnswer">
+                <span class="lawyerName">陈律师</span>
+                <span class="editorTime">编辑于2017-09-22 10:26:55</span>
+                <p>您好，在工作中与同事发生肢体冲突在企业管理中是属于比较严重的事情了。您说最近工作压力非常大，估计最近工作态度上也有表现出问题并且影响到了工作质量。再加上这次事件才让单位想开除您。</p>
+              </div>
+              <div class="attention">
+                <span>关注</span>
+                <span>分享</span>
+                <span>收藏</span>
+              </div>
+          </div>
+        </li>
+        
+        <li>
+          <div class="userListLeft">
+            <img src="./img/user.png" alt="">
+            <span>赞<i>2</i></span>
+          </div>
+          <div class="userListRight">
+              <span class="answerTime">陈律师62天前回答了这个问题</span>
+              <span class="label">标签：
+                <span class="labelType">合同纠纷</span>
+              </span>
+              <p class="summary">我提前30天地及哦啊了辞职书，幼儿园的回答是不同意我离职。现在园方说...</p>  
+              <div class="lawyerAnswer">
+                <span class="lawyerName">陈律师</span>
+                <span class="editorTime">编辑于2017-09-22 10:26:55</span>
+                <p>您好，在工作中与同事发生肢体冲突在企业管理中是属于比较严重的事情了。您说最近工作压力非常大，估计最近工作态度上也有表现出问题并且影响到了工作质量。再加上这次事件才让单位想开除您。</p>
+              </div>
+              <div class="attention">
+                <span>关注</span>
+                <span>分享</span>
+                <span>收藏</span>
+              </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="myList">
+      <ul>
+        <li>我的回答</li>
+        <li>我的关注</li>
+        <li>我的收藏</li>
+      </ul>
+    </div>
+    <div class="bottomPage">
+
+    </div>
+  </article>
+  <footer>
+    <div class="code">
+			<img src="img/code.png" alt="code">
+			<p class="download">扫一扫，下载法义app</p>
+		</div>
+		<div class="about">
+			<p>关于我们</p>
+			<p>&nbsp</p>
+			<p>法义（http://www.fy13322.com）是国内领先的法律服务平台，致力于为用户提供优质法律服务。</p>
+			<p>法义成立至今以其诚信、透明、公平、高效、创新的特征赢得用户口碑。</p>
+			<p>Copyright © 2014-2017 lvzheng. All Rights Reserved</p>
+		</div>
+
+  </footer>
+</body>
+</html>
+<script src="jquery-3.2.1.js"></script> 
+<!-- <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>  -->
+<script>
+// Mock.mock('http://g.cn',{
+//   'name': '[@name](/user/name)()',
+//   'age|1-100':100,
+//   'color':'[@color](/user/color)'
+// });
+// $.ajax({
+//   url:'http://g.cn',
+// }).done(function(data,status,xhr){
+//   console.log(JSON.stringify(data,null,4))
+// })
+  
+  function requestList() {
+		$.ajax({
+			url: "./data/order1.json",
+			dataType: "json",
+			async: false,
+			data: null,
+			type: "GET",
+			success:function(req){
+        console.log(req);
+        // var html = '';
+        // html += '<li><div class="userListLeft"><img src="./img/user.png" alt=""><span>赞<i>2</i></span></div>' +
+        //   '<div class="userListRight"><span class="answerTime">陈律师62天前回答了这个问题</span>'+
+        //       '<span class="label">标签：<span class="labelType">合同纠纷</span></span>'+
+        //       '<p class="summary">我在工厂打工，然后被人打了，怎么办？</p>'+ 
+        //       '<div class="lawyerAnswer">'+
+        //         '<span class="lawyerName">陈律师</span><span class="editorTime">编辑于2017-09-22 10:26:55</span>'+
+        //         '<p>您好，在工作中与同事发生肢体冲突在企业管理中是属于比较严重的事情了。您说最近工作压力非常大，估计最近工作态度上也有表现出问题并且影响到了工作质量。再加上这次事件才让单位想开除您。</p>'+
+        //       '</div>'+
+        //       '<div class="attention"><span>关注</span><span>分享</span><span>收藏</span></div>'+
+        //   '</div>'+
+        // '</li>';
+        // $(".userList ul").html(html);
+			},
+			error:function(e){
+				console.log("出错了");
+			}
+		});
+	}
+	requestList();
+</script>

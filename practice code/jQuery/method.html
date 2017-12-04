@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .div1{
+      width: 100px;
+      height: 100px;
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <div class="div1"></div>
+</body>
+</html>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+  //动态生成一个div id为content
+  $("body").html("<div id='content'></div>");
+  //在上基础之上动态生成一个ul
+  $("#content").html("<ul></ul>");
+  //在ul里面创建5个li，li里面放我是1-5
+  var html = "";
+  for(var i=0; i<6; i++){
+    html += "<li>我是" + (i+1) + "</li>";
+  }
+  $("#content ul").html(html);
+  //将第三个li设置为红色，将其他所有的都设置为蓝色
+  $("#content ul").children().eq(2).css("color","red").siblings().css("color","blue");
+  //在最后一个li后面追加一个ul
+  $("#content ul").append("<ul class='ul'></ul>");
+  //在追加的ul里面生成7个li
+  var html = "";
+  for(var i=0; i<7; i++){
+    html += "<li>我是" + (i+1) + "</li>";
+  }
+  $(".ul").html(html);
+  //设置第七个li的字体为30px
+  $(".ul").children().eq(6).css("fontSize","30px");
+
+  //-------------------------------------------------------------
+  //JQ常用方法总结
+  console.log($(".ul").html());//不给参数表示获取节点,给参数表示创建新的节点
+  console.log($(".ul").text());//不给参数表示获取文本
+  $(".ul li").eq(2).text("我改变了文本");//给参数表示创建或者改变文本
+  $(".ul").append("<div>追加的节点</div>");//给同级元素追加新节点
+  $(".ul").children().eq(3).attr("class", "newClass");//没参数表示获取节点的属性，有参数表示给属性重新赋值
+  $(".ul").children().eq(3).removeAttr("class","newClass");//没参数表示移除所有属性，有参数表示指定移除的属性
+  $(".ul").addClass("ul1");//给节点添加类名
+  $(".ul").removeClass("ul1");//给节点删除类名，没给参数就是移除全部类名
+  
+  // siblings()
+  // next()
+  // nextAll()
+  // find()
+  // parents()
+  // children()
+  // hide()
+  // show(1000)
+  // clone()
+</script>

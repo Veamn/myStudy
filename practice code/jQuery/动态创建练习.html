@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+  //动态生成一个div id为content
+  $("body").html("<div id='content'>我是新创建的DIV</div>");
+  //在上基础之上动态生成一个ul
+  //在ul里面创建5个li，li里面放我是1-5
+  var html = "";
+  html += "<ul>";
+  for(var i=0; i<6; i++){
+    html += "<li>我是" + (i+1) + "</li>";
+  }
+  html += "</ul>";
+  $("#content").html(html);
+  //将第三个li设置为红色，将其他所有的都设置为蓝色
+  $("#content").children().children().eq(2).css("color","red");
+  //在最后一个li后面追加一个ul
+  $("#content").children().append("<ul>我是追加的</ul>");
+  //在追加的ul里面生成7个li
+  var html = "";
+  for(var i=0; i<7; i++){
+    html += "<li>我是" + (1+i) + "</li>"
+  }
+  $("#content ul").children(":last-child").html(html);
+  //设置第七个li的字体为30px
+  $("#content ul").children(":last-child").children(":last-child").css("fontSize","30px");
+</script>

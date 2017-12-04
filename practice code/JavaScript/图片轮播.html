@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .divImg{
+      width: 400px;
+      height: 250px;
+      border: 1px solid #666;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .divImg img{
+      width: 390px;
+      margin-left: 5px;
+      margin-top: 3px;
+    }
+    #cirContent{
+      width: 400px;
+      height: 20px;
+      /* border: solid 1px red; */
+      margin-top: -25px;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      bottom: 2px;
+    }
+    
+    .cir{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      background-color: transparent;
+      margin: 0 5px;
+      color: transparent;
+    }
+    .cir:hover{
+      background-color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="divImg">
+    <img src="../img/1.jpg" alt="">
+  </div>
+</body>
+</html>
+<script src="../jQuery/jquery-3.2.1.min.js"></script>
+<script>
+  var img = ["../img/2.jpg","../img/3.jpg","../img/1.jpg"];
+  //动态添加小圆圈
+  function createCir(cirnum){
+    var html = "<div id='cirContent'>";
+      for(var i = 0; i < cirnum; i++){
+        html += "<div class='cir'>" + (i+1) + "</div>";
+      }
+      html += "</div>";
+      return html;
+  }
+  $(".divImg").append(createCir(img.length));
+  //轮播图效果
+  var index = 0;
+  var time = -1;
+  function lbt(source){
+    time = setInterval(function(){
+      index > source.length-1 ? index=0 : index = index;
+      $(".divImg img").attr("src",source[index]);
+      auto(index);
+      index++;
+    },2000);
+  }
+  lbt(img);
+  //鼠标移进去和移出来
+  $(".divImg").hover(function(){
+    clearInterval(time);
+  },function(){
+    lbt(img);
+  });
+  //指定圆圈获取图片
+  $(".cir").hover(function(event){
+    $(".divImg img").attr("src", img[$(this).text()-1]);
+  });
+  //图片轮播自动识别对应圆圈
+  function auto(index){
+    $(".cir").eq(index).css("background-color","#fff").siblings().css("background-color","transparent");
+  }
+  
+
+  
+</script>

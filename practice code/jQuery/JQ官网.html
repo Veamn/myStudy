@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .div1,.div2{
+      width: 200px;
+      height: 200px;
+      background-color: rgb(121, 14, 14);
+      margin: 5px;
+      padding: 10px;
+      margin: 10px; 
+      border: 1px solid red;
+    }
+    .div3{
+      width: 200px;
+      height: 200px;
+      background-color: #eee;
+    }
+    .red{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="div1"><p>hello</p> hello</div>
+  <div class="div2"></div>
+</body>
+</html>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+  // $(".div1").click(function(){
+  //   $(this).hide(3000);
+  // });
+  /////////////////////////////////////////////////////
+  // $(".div1").click(function(){
+  //   $(".div2").toggle(1000,function(){
+  //     alert("回调函数");
+  //   });
+  // });
+  /////////////////////////////////////////////////////
+  // $(".div1").hover(function(){
+  //   $(".div2").fadeOut(2000);  //淡出效果
+  // });
+  /////////////////////////////////////////////////////
+  // $(".div1").click(function(){
+  //    $(".div2").fadeTo(1000,0.2);   //指定过度时间和透明度
+  // });
+  
+  // $(".div1").click(function(){
+  //    $(".div2").fadeToggle(1000);   //指定过度时间和透明度
+  // });
+  /////////////////////////////////////////////////////
+    // $(".div1").click(function(){
+    //   $(".div2").slideUp(1000);
+    // }); //创建上滑动效果
+    // $(".div1").click(function(){
+    //   $(".div2").slideDown(1000);
+    // }); //创建下滑动效果
+    // $(".div1").click(function(){
+    //    $(".div2").stop().slideToggle(1000);
+    //  });   //加stop（）可以防止一直触发事件
+    // $(".div1").click(function(){
+    //   $(".div2").animate({marginLeft:'100px'},1000);
+    //  });  //添加动画，第一个参数是对象，第二个是过渡时间
+  /////////////////////////////////////////////////////
+  // $("body").prepend("<div class='div3'>我是body的子集</div>");//在指定元素开头追加节点，追加到子集
+  // $(".div1").append("<p class='p'>我是div1的子集</p>");//在指定元素结尾追加节点，追加到子集
+  // $(".p").after("<p>加到后面，我是p的同级</p>");//在指定元素后面添加，同级关系
+  // $(".p").before("<p>加到前面，我是p的同级</p>");//在指定元素后面添加，同级关系
+  ////////////////////////////////////////////////////////////
+    // $(".div3").remove();//删除被选元素及其子元素，移除
+    // $(".div3").empty();//删除被选元素的子元素，清空
+  ////////////////////////////////////////////////////////////
+  // $(".div1").click(function(){
+  //   $("p").toggleClass("red");    //有类就删除，没类就添加
+  // });
+  ////////////////////////////////////////////////////////////
+  // console.log($("p").css("color"));//获取元素的css属性
+  ////////////////////////////////////////////////////////////
+  // console.log($(".div1").width());//不包括内边距
+  // console.log($(".div1").innerWidth());//包括内边距
+  // console.log($(".div1").outerWidth());//包括内边距和边框
+  ////////////////////////////////////////////////////////////
+  
+
+
+</script>
