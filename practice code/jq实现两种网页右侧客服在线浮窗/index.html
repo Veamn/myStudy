@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+</head>
+<body>
+<div class="list">
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=123456&site=qq&menu=yes" target="_blank" id="qq_left" class="qq_list"></a>
+    <a href="#" class="consult" target="_blank">
+        <div class="phone">00-1122345134</div>
+    </a>
+    <a class="cart">
+        <div class="pic"></div>
+    </a>
+    <a href="javascript:void(0)" class="btn_top">
+    </a>
+</div>
+<script>
+    $(function () {
+        $(".btn_top").hide();
+//live() delegate() bind()
+        $(".btn_top").on("click", function () {
+            $("html,body").animate({scrollTop: 0}, 300);
+            return false;
+        })
+//        bind为被选元素添加一个或者多个时间处理程序，当事件触发时运行函数
+//        多个事件用空格隔开（千万不要加逗号）
+        $(window).bind('scroll resize', function () {
+            console.log($(window).scrollTop())
+//            scrollTop 返回被选元素的垂直滚动条位置
+            if ($(window).scrollTop() <= 300) {
+                $(".btn_top").hide();
+            } else {
+                $(".btn_top").show();
+            }
+        })
+    })
+</script>
+
+<div class="side">
+    <ul>
+        <li><a href="#">
+            <div class="sidebox"><img src="img/side_icon01.png">客服中心</div>
+        </a></li>
+        <li><a href="#">
+            <div class="sidebox"><img src="img/side_icon02.png">客户案例</div>
+        </a></li>
+        <li><a href="javascript:void(0);">
+            <div class="sidebox"><img src="img/side_icon04.png">QQ客服</div>
+        </a></li>
+        <li><a href="javascript:void(0);">
+            <div class="sidebox"><img src="img/side_icon03.png">新浪微博</div>
+        </a></li>
+        <li style="border:none;"><a href="javascript:goTop();" class="sidetop"><img src="img/side_icon05.png"></a></li>
+    </ul>
+</div>
+<script>
+    $(function () {
+        $(".slide ul li").hover(function () {
+            $(this).find(".sidebox").stop().animate({"width": "127px"}, 200).css({
+                "opacity": "1",
+                "background": "#ae1c1c"
+            })
+        }, function () {
+            $(this).find(".sidebox").stop().animate({"width": "54px"}, 200).css({
+                "opacity": "0.8",
+                "background": "#000"
+            })
+        });
+    });
+
+    function goTop() {
+        $("html,body").animate({scrollTop: 0}, 600);
+
+    };
+</script>
+</body>
+</html>
