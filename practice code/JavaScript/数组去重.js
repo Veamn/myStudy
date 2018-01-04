@@ -5,6 +5,7 @@ function repeat_1(arr){
     json[arr[i]] = 0;
   }
   for(var key in json){
+    key = parsetInt(key);
     result.push(key);
   }
   console.log(result);
